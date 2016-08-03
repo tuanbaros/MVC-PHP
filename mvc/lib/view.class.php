@@ -30,7 +30,6 @@ class View
 		{
 			$path = self::getDefaultViewPath();
 
-
 		}
 
 		if ( !file_exists($path))

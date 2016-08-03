@@ -45,9 +45,9 @@ class Router{
 	{
 
 		$this->uri = urldecode(trim($uri,'/'));
-
 		$routes = Config::get('routes');
 		$this->route = Config::get('default_route');
+
 		$this->method_prefix =  isset($routes[$this->route]) ? $routes[$this->route] : '';
 		$this->language = Config::get('default_language');
 		$this->controller = Config::get('default_controller');
@@ -95,6 +95,11 @@ class Router{
 
 		}
 
+	}
+
+	public static function redirect($location)
+	{
+		header("Location: $location");
 	}
 	
 }
